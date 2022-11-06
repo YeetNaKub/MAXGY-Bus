@@ -1,0 +1,300 @@
+  a{
+    font-family:'Mitr';
+  }
+  button{
+    font-family:'Mitr';
+  }
+  select{
+    font-family:'Mitr';
+  }
+  option{
+    font-family:'Mitr';
+  }
+  .pai{
+    background-color: #ffffff;
+    width: 100%;
+    height: 55px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: table;
+  }
+  .gps{
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+  }
+  .logo{
+    margin-top: 15px;
+    width: 100%;
+    height: 50px;
+  }
+  .tabab{
+    float: left;
+    background-color: #000000;
+    width: 100%;
+    height: 25%;
+  }
+  .tab {
+    float: left;
+    float: top;
+    background-color: #ffffff;
+    width: 25%;
+    height: 791px;
+  }
+  .tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+  }
+  .tabcol1{
+    float: left;
+    background-color: #000000;
+    width: 100%;
+    height: 80px;
+  }
+  .tabcol2{
+    float: left;
+    background-color: #ffffff;
+    width: 100%;
+    height: 68px;
+  }
+  .tabcol3{
+    float: left;
+    background-color: #000000;
+    width: 100%;
+    height: 80px;
+  }
+  .tabcol4{
+    float: left;
+    margin-top: 30px;
+    background-color: #ffffff;
+    width: 100%;
+    height: 500px;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+  .tabp{
+    float: right;
+    width: 70%;
+    height: 100%;
+  }
+  .tabtl{
+    float: left;
+    width: 30%;
+    height: 100%;
+    margin-top: 10%;
+  }
+  .bt1{
+    float: center;
+    margin-left: 25%;
+    width: 50%;
+  }
+  .dropbtn {
+    background-color: #555555c3;
+    color: rgba(144, 144, 144, 0.252);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  .dropdown {
+    margin-left: auto;
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown-content a:hover {background-color: #ddd;}
+  .dropdown:hover .dropdown-content {display: block;}
+  .dropdown:hover .dropbtn {background-color: rgba(167, 167, 167, 0.7)}
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+  .pai2{
+    box-sizing: border-box;
+    cursor: pointer;
+    display: table;
+    height: 55px;
+    padding: 10px 20px;
+    position: relative;
+    width: 50%;
+    background-color: #fff;
+  }
+  .paibtn {
+    background-color: #555555c3;
+    color: rgba(223, 218, 218, 0.252);
+    font-size: 16px;
+  }
+  .pai:hover .paibtn {background-color: rgba(205, 203, 203, 0.7)}
+  .icob{
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 40px;
+    float: left;
+  }
+  h1{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.0); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    height: 80%;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: rgb(0, 0, 0);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .menu{
+    margin-left: 15px;
+    float: left;
+  }
+  .sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 15px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  }
+  
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #cdcdcd;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  #main {
+    transition: margin-left .5s;
+    padding: 20px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 1px;}
+    .sidenav a {font-size: 18px;}
+  }
+  .clearfix{
+    clear:both;
+  }
+  .tabse{
+    margin-left: 5%;
+    margin-top: 5%;
+  }
+  .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* The actual timeline (the vertical ruler) */
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: rgb(0, 0, 0);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+  
+  label,
+  footer {
+      font-family: sans-serif;
+  }
+
+  label {
+      font-size: 1rem;
+      padding-right: 10px;
+  }
+
+  select {
+      font-size: .9rem;
+      padding: 5px 5px;
+  }
+
+  footer {
+      font-size: .8rem;
+      position: absolute;
+      bottom: 30px;
+      left: 30px;
+  }

@@ -1,0 +1,1963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Binary Search</title>
+    <link rel = "icon" href = "image/bus.png" type = "image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="styt" href="script/script.js">
+	<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="tab">
+            <div class="tabcol1">
+              <div class="logo">
+                <div class="menu">
+                  <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="index.html">MAGXY BUS</a>
+                    <a href="about.html">About Us</a>
+                    <a href="https://forms.gle/6ocVfgpfwLkGq6tZA" style="font-family:'Mitr';">แบบประเมิน</a>
+                  </div>
+                  <span style="font-size:30px;cursor:pointer;color:white" onclick="openNav()">&#9776;</span>
+                </div>
+                <h1 style="color:white;cursor:context-menu">MAGXY BUS</h1>
+              </div>
+            </div>
+            <div class="tabcol2">
+              <div class="icob">
+                <img src="image/bus.png"width="45"height="45">
+              </div>
+              <div class="bt1">
+                <div class="dropdown">
+                  <button class="dropbtn">
+                    <div id="ID2">
+                    <span>
+                      <script>
+                          var ts = "เลือกสายรถ";
+                          document.write(ts);
+                      </script>
+                    </span></div></button>
+                  <div class="dropdown-content">
+                    <a href="#" onclick="sai(0)">-- เลือกสายรถ --</a>
+                    <a href="#" onclick="sai(1)">สาย 26</a>
+                    <a href="#" onclick="sai(2)">สาย 96</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tabcol3">
+              <div class="tabse">
+                <select id="paif" onclick="paifu(this.value)">
+                    <option value="0">-- เลือกป้ายรถเมลปัจจุบัน --</option>
+                    <option value="1">อู่มีนบุรี</option>
+                    <option value="2">หน้าร้านทองมีนบุรี</option>
+                    <option value="3">โรงพยาบาลนวมินทร์ 9</option>
+                    <option value="4">แยกมีนบุรีตรงข้ามตะเกียง,ปั้มบางจาก</option>
+                    <option value="5">ตรงข้าม รร.เศรษฐบุตรบำเพ็ญ</option>
+                    <option value="6">รามอินทรา 86</option>
+                    <option value="7">หม่อมเจ้าสง่างามฯ</option>
+                    <option value="8">ตรงข้ามรามอินทรา 115</option>
+                    <option value="9">ตรงข้ามพระยาสุเรนทร์</option>
+                    <option value="10">ซอยรามอินทรา74,หมู่บ้านรังสิยา</option>
+                    <option value="11">วิทยาลัยทักษิณา(ไทยสุริยะเก่า)</option>
+                    <option value="12">ตรงข้ามโรงพยาบาลนพรัตน์</option>
+                    <option value="13">ฮ้อปูดอง</option>
+                    <option value="14">ธนาคารไทยพาณิชย์รามอินทรา</option>
+                    <option value="15">ตรงข้ามแฟชั่นไอส์แลนด์</option>
+                    <option value="16">ตรงข้ามอำนวยเภสัช</option>
+                    <option value="17">ซอยชื่นกมล,ตรงข้ามศูนย์โตโยต้าชัวร์</option>
+                    <option value="18">โรงพยาบาลสินแพทย์</option>
+                    <option value="19">ซอยรามอินทรา 46</option>
+                    <option value="20">ซอยรามอินทรา 50,ตรงข้ามศูนย์นิสสัน</option>
+                    <option value="21">ตรงข้ามซอยรามอินทรา 69</option>
+                    <option value="22">คอนโดลุมพินี,ตรงข้ามซอยอมรวิวัฒน์</option>
+                    <option value="23">กม.7 รามอินทรา(ขาเข้า)</option>
+                    <option value="24">ซอยนวมินทร์ 98,ตรงข้ามไปรษณีย์จรเข้บัว</option>
+                    <option value="25">ซอยนวลจันทร์</option>
+                    <option value="26">ตรงข้ามโรงเรียนนวมินทร์(สิงห์สิงหเสนีย์)</option>
+                    <option value="27">โรงเรียนสายอักษรกม.6</option>
+                    <option value="28">หมู่บ้านอัมรินทร์นวมินทร์ 90</option>
+                    <option value="29">ตรงข้ามหมู่บ้านสวัสดิการทหารบก</option>
+                    <option value="30">โรงพยาบาลพญาไทนวมินทร์</option>
+                    <option value="31">วัชรพล</option>
+                    <option value="32">ซอยนวมินทร์ 80,ตรงข้ามเคหะนวมินทร์</option>
+                    <option value="33">ตรงข้ามกองบินตำรวจ</option>
+                    <option value="34">โรงเรียนเบญจมินทร์</option>
+                    <option value="35">ซอยมัยลาภ(รามอินทราซอย16)</option>
+                    <option value="36">โรงเรียนบดินทรเดชา(สิงห์สิงหเสนี) 2</option>
+                    <option value="37">ตรงข้ามตลาดกม.4</option>
+                    <option value="38">หมู่บ้านปัฐวิกรณ์</option>
+                    <option value="39">ตรงข้ามหมู่บ้านเกาหลี</option>
+                    <option value="40">หมู่บ้านธนะสิน(นวมินทร์ 68)</option>
+                    <option value="41">บิ๊กซีรามอินทรา</option>
+                    <option value="42">ซอยนวมินทร์ 58,หมู่บ้านสินธานี 1,ตรงข้ามประกันสังคม</option>
+                    <option value="43">แยกลาดปลาเค้า(ศูนย์การค้ารามอินทรา)</option>
+                    <option value="44">สันติอโศก(ซอยนวมินทร์ 52)</option>
+                    <option value="45">สนามมวยลุมพินีรามอินทรา</option>
+                    <option value="46">ตรงข้ามตลาดอินทรารักษ์(นวมินทร์ 38)</option>
+                    <option value="47">ศูนย์พัฒนากีฬากองทัพบก</option>
+                    <option value="48">ธนาคารกสิกร,หมู่บ้านปรีชา 2</option>
+                    <option value="49">ศูนย์พัฒนากีฬากองทัพบก สนามกอล์ฟ</option>
+                    <option value="50">หมู่บ้านธารทิพย์,ตรงข้ามโรงเรียนโสมาภา</option>
+                    <option value="51">ตรงข้ามเซ็นทรัลรามอินทรา</option>
+                    <option value="52">หมู่บ้านศรีนคร1</option>
+                    <option value="53">ตรงข้ามมหาวิทยาลัยเกริก</option>
+                    <option value="54">ตรงข้ามหมู่บ้านวังทอง</option>
+                    <option value="55">การไฟฟ้าบางเขน,กรมทหารราบที่11(ประตู1)</option>
+                    <option value="56">ตรงข้ามสำนักงานที่ดินบางกะปิ</option>
+                    <option value="57">ตรงข้ามอู่บางเขน</option>
+                    <option value="58">แยกแฮปปี้แลนด์นวมินทร์ 16</option>
+                    <option value="59">ตรงข้ามซอยพหลโยธิน 51</option>
+                    <option value="60">สนามกีฬาคลองจั่น</option>
+                    <option value="61">กรมทหารราบที่11(ประตู2)</option>
+                    <option value="62">การเคหะแห่งชาติคลองจั่น</option>
+                    <option value="63">กรมทหารราบที่11(ประตู3)</option>
+                    <option value="64">ตรงข้ามโรงเรียนบ้านบางกะปิ</option>
+                    <option value="65">วัดบางบัว</option>
+                    <option value="66">ตรงข้ามสถานีตำรวจลาดพร้าว</option>
+                    <option value="67">มหาวิทยาลัยศรีปทุม</option>
+                    <option value="68">เดอะมอลล์บางกะปิ</option>
+                    <option value="69">โรงเรียนสารวิทยา</option>
+                    <option value="70">แม็คโครลาดพร้าว,ตะวันนา2</option>
+                    <option value="71">กรมวิทยาศาสตร์ทหารบก</option>
+                    <option value="72">การไฟฟ้าสถานีย่อยคลองจั่น</option>
+                    <option value="73">โรงแรมมารวย</option>
+                    <option value="74">ตรงข้ามโรงพยาบาลเวชธานี</option>
+                    <option value="75">สำนักงานใหญ่ธกส.</option>
+                    <option value="76">ซอยลาดพร้าว 130/1,ตรงข้ามวิสุทธานี</option>
+                    <option value="77">ตรงข้ามมหาวิทยาลัยเกษตรศาสตร์(ฝั่งพหลโยธิน)</option>
+                    <option value="78">ตรงข้ามซอยลาดพร้าว 101</option>
+                    <option value="79">แยกเกษตร(พหลโยธิน34/2)</option>
+                    <option value="80">ซอยลาดพร้าว 126</option>
+                    <option value="81">รพ.เมโย</option>
+                    <option value="82">ซอยลาดพร้าว 122</option>
+                    <option value="83">วิทยาลัยเทคโนโลยี ไทยวิจิตรศิลป</option>
+                    <option value="84">ตรงข้ามโรงพยาบาลลาดพร้าว</option>
+                    <option value="85">ตรงข้ามเมเจอร์รัชโยธิน</option>
+                    <option value="86">ตรงข้ามฟู้ดแลนด์</option>
+                    <option value="87">ตึกช้าง</option>
+                    <option value="88">โรงเรียนบางกอกศึกษา(ลาดพร้าว112)</option>
+                    <option value="89">โรงเรียนสตรีวรนาถบางเขน</option>
+                    <option value="90">ตรงข้ามสำนักงานเขตวังทองหลาง</option>
+                    <option value="91">กองปราบปราม</option>
+                    <option value="92">ตรงข้ามอิมพิเรียลลาดพร้าว</option>
+                    <option value="93">เทสโก้โลตัสลาดพร้าว</option>
+                    <option value="94">ตรงข้ามซอยลาดพร้าว 71</option>
+                    <option value="95">ตรงข้ามเซ็นทรัลลาดพร้าว</option>
+                    <option value="96">ซอยลาดพร้าว 80</option>
+                    <option value="97">ธนาคารทหารไทย (สำนักงานใหญ่)</option>
+                    <option value="98">ตรงข้ามไปรษณีย์ลาดพร้าว(ลาดพร้าว72)</option>
+                    <option value="99">ตรงข้ามสวนจตุจักร</option>
+                    <option value="100">ซอยลาดพร้าว64,ตรงข้ามศึกษาภัณฑ์พาณิชย์</option>
+                    <option value="101">กรมการขนส่งทางบก</option>
+                    <option value="102">กรมแผนที่ทหาร</option>
+                    <option value="103">ซอยพหลโยธิน 18</option>
+                    <option value="104">ตรงข้ามตลาดโชคชัย 4,ซอยลาดพร้าว 58</option>
+                    <option value="105">ตรงข้ามวัดไผ่ตัน</option>
+                    <option value="106">ตรงข้ามตลาดสะพาน 2 </option>
+                    <option value="107">ป้ายรถประจำทาง BTS สะพานควาย(ทางออก2)</option>
+                    <option value="108">ซอยภาวนา</option>
+                    <option value="109">สถานีตำรวจบางซื่อ</option>
+                    <option value="110">ซอยลาดพร้าว 42</option>
+                    <option value="111">ซอยพหลโยธิน 8,ซอยสายลม</option>
+                    <option value="112">ซอยลาดพร้าว 34</option>
+                    <option value="113">ป้ายรถประจำทาง BTS อารีย์(ทางออก4)</option>
+                    <option value="114">ป้ายรถประจำทาง MRT ลาดพร้าว (ซอย 26)</option>
+                    <option value="115">ซอยราชครู,ตรงข้ามซอยพหลโยธิน 5</option>
+                    <option value="116">ปากทางลาดพร้าว-วิภาวดีรังสิต</option>
+                    <option value="117">ซอยพหลโยธิน 2,ซอยกาญจนาคม</option>
+                    <option value="118">ป้ายรถประจำทาง BTS สถานีหมอชิต(ทางออก4)</option>
+                    <option value="119">ป้ายรถประจำทาง BTSสนามเป้า(ทางออก4)</option>
+                    <option value="120">ป้ายรถประจำทาง MRT กำแพงเพชร</option>
+                    <option value="121">ททบ.5</option>
+                    <option value="122">ตรงข้ามเจเจมอลล์</option>
+                    <option value="123">ซอยลือชา,ตรงข้ามซอยพหลโยธิน 1</option>
+                    <option value="124">ตรงข้ามสวนสมเด็จพระนางเจ้าสิริกิติ์</option>
+                    <option value="125">อนุสาวรีย์ชัยสมรภูมิ (เกาะพหลโยธิน)</option>
+                    <option value="126">อู่หมอชิต 2</option>
+                </select>
+              </div>
+            </div>
+            <div class ="tabcol4">
+              <div class="tabtl">
+                <div class="timeline">
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>
+                  <h1>&nbsp</h1>
+                  <h1>V</h1>
+                  <h1>&nbsp</h1>  
+                </div>
+              </div>
+              <div class="tabp">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(1)" id="myBtn">อู่มีนบุรี</button>
+                  <div id="myModal" class="modal">
+                    <div class="modal-content">
+                      <span class="close">&times;</span>
+                      <p align="center"style="font-size:100px;font-family:'Mitr';">
+                        <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(2)">หน้าร้านทองมีนบุรี</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(3)">โรงพยาบาลนวมินทร์ 9</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(4)">แยกมีนบุรีตรงข้ามตะเกียง,ปั้มบางจาก</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(5)">ตรงข้าม รร.เศรษฐบุตรบำเพ็ญ</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(6)">รามอินทรา 86</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(7)">หม่อมเจ้าสง่างามฯ</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(8)">ตรงข้ามรามอินทรา 115</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(9)">ตรงข้ามพระยาสุเรนทร์</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(10)">ซอยรามอินทรา74,หมู่บ้านรังสิยา</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(11)">วิทยาลัยทักษิณา(ไทยสุริยะเก่า)</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(12)">ตรงข้ามโรงพยาบาลนพรัตน์</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(13)">ฮ้อปูดอง</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(14)">ธนาคารไทยพาณิชย์รามอินทรา</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(15)">ตรงข้ามแฟชั่นไอส์แลนด์</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(16)">ตรงข้ามอำนวยเภสัช</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(17)">ซอยชื่นกมล,ตรงข้ามศูนย์โตโยต้าชัวร์</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%"><div class ="pai">
+                <button class="paibtn" onclick="openpop(18)">โรงพยาบาลสินแพทย์</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(19)">ซอยรามอินทรา 46</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(20)">ซอยรามอินทรา 50,ตรงข้ามศูนย์นิสสัน</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(21)">ตรงข้ามซอยรามอินทรา 69</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(22)">คอนโดลุมพินี,ตรงข้ามซอยอมรวิวัฒน์</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(23)">กม.7 รามอินทรา(ขาเข้า)</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(24)">ซอยนวมินทร์ 98,ตรงข้ามไปรษณีย์จรเข้บัว</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(25)">ซอยนวลจันทร์</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(26)">ตรงข้ามโรงเรียนนวมินทร์(สิงห์สิงหเสนีย์)</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(27)">โรงเรียนสายอักษรกม.6</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(28)">หมู่บ้านอัมรินทร์นวมินทร์ 90</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(29)">ตรงข้ามหมู่บ้านสวัสดิการทหารบก</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(30)">โรงพยาบาลพญาไทนวมินทร์</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(31)">วัชรพล</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(32)">ซอยนวมินทร์ 80,ตรงข้ามเคหะนวมินทร์</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(33)">ตรงข้ามกองบินตำรวจ</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(34)">โรงเรียนเบญจมินทร์</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(35)">ซอยมัยลาภ(รามอินทราซอย16)</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(36)">โรงเรียนบดินทรเดชา(สิงห์สิงหเสนี) 2</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(37)">ตรงข้ามตลาดกม.4</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(38)">หมู่บ้านปัฐวิกรณ์</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(39)">ตรงข้ามหมู่บ้านเกาหลี</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(40)">หมู่บ้านธนะสิน(นวมินทร์ 68)</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(41)">บิ๊กซีรามอินทรา</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(42)">ซอยนวมินทร์ 58,หมู่บ้านสินธานี 1,ตรงข้ามประกันสังคม</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(43)">แยกลาดปลาเค้า(ศูนย์การค้ารามอินทรา)</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(44)">สันติอโศก(ซอยนวมินทร์ 52)</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(45)">สนามมวยลุมพินีรามอินทรา</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(46)">ตรงข้ามตลาดอินทรารักษ์(นวมินทร์ 38)</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(47)">ศูนย์พัฒนากีฬากองทัพบก</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(48)">ธนาคารกสิกร,หมู่บ้านปรีชา 2</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(49)">ศูนย์พัฒนากีฬากองทัพบก สนามกอล์ฟ</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(50)">หมู่บ้านธารทิพย์,ตรงข้ามโรงเรียนโสมาภา</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(51)">ตรงข้ามเซ็นทรัลรามอินทรา</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(52)">หมู่บ้านศรีนคร1</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(53)">ตรงข้ามมหาวิทยาลัยเกริก</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(54)">ตรงข้ามหมู่บ้านวังทอง</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(55)">การไฟฟ้าบางเขน,กรมทหารราบที่11(ประตู1)</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(56)">ตรงข้ามสำนักงานที่ดินบางกะปิ</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(57)">ตรงข้ามอู่บางเขน</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(58)">แยกแฮปปี้แลนด์นวมินทร์ 16</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(59)">ตรงข้ามซอยพหลโยธิน 51</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(60)">สนามกีฬาคลองจั่น</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(61)">กรมทหารราบที่11(ประตู2)</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(62)">การเคหะแห่งชาติคลองจั่น</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(63)">กรมทหารราบที่11(ประตู3)</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(64)">ตรงข้ามโรงเรียนบ้านบางกะปิ</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(65)">วัดบางบัว</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(66)">ตรงข้ามสถานีตำรวจลาดพร้าว</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(67)">มหาวิทยาลัยศรีปทุม</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(68)">เดอะมอลล์บางกะปิ</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(69)">โรงเรียนสารวิทยา</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(70)">แม็คโครลาดพร้าว,ตะวันนา2</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(71)">กรมวิทยาศาสตร์ทหารบก</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(72)">การไฟฟ้าสถานีย่อยคลองจั่น</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(73)">โรงแรมมารวย</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(74)">ตรงข้ามโรงพยาบาลเวชธานี</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(75)">สำนักงานใหญ่ธกส.</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(76)">ซอยลาดพร้าว 130/1,ตรงข้ามวิสุทธานี</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(77)">ตรงข้ามมหาวิทยาลัยเกษตรศาสตร์(ฝั่งพหลโยธิน)</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(78)">ตรงข้ามซอยลาดพร้าว 101</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(79)">แยกเกษตร(พหลโยธิน34/2)</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(80)">ซอยลาดพร้าว 126</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(81)">รพ.เมโย</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(82)">ซอยลาดพร้าว 122</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(83)">วิทยาลัยเทคโนโลยี ไทยวิจิตรศิลป</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(84)">ตรงข้ามโรงพยาบาลลาดพร้าว</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(85)">ตรงข้ามเมเจอร์รัชโยธิน</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(86)">ตรงข้ามฟู้ดแลนด์</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(87)">ตึกช้าง</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(88)">โรงเรียนบางกอกศึกษา(ลาดพร้าว112)</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(89)">โรงเรียนสตรีวรนาถบางเขน</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(90)">ตรงข้ามสำนักงานเขตวังทองหลาง</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(91)">กองปราบปราม</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(92)">ตรงข้ามอิมพิเรียลลาดพร้าว</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(93)">เทสโก้โลตัสลาดพร้าว</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(94)">ตรงข้ามซอยลาดพร้าว 71</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(95)">ตรงข้ามเซ็นทรัลลาดพร้าว</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(96)">ซอยลาดพร้าว 80</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(97)">ธนาคารทหารไทย (สำนักงานใหญ่)</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(98)">ตรงข้ามไปรษณีย์ลาดพร้าว(ลาดพร้าว72)</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(99)">ตรงข้ามสวนจตุจักร</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(100)">ซอยลาดพร้าว64,ตรงข้ามศึกษาภัณฑ์พาณิชย์</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(101)">กรมการขนส่งทางบก</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(102)">กรมแผนที่ทหาร</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(103)">ซอยพหลโยธิน 18</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(104)">ตรงข้ามตลาดโชคชัย 4,ซอยลาดพร้าว 58</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(105)">ตรงข้ามวัดไผ่ตัน</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(106)">ตรงข้ามตลาดสะพาน 2</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(107)">ป้ายรถประจำทาง BTS สะพานควาย(ทางออก2)</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(108)">ซอยภาวนา</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(109)">สถานีตำรวจบางซื่อ</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(110)">ซอยลาดพร้าว 42</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(111)">ซอยพหลโยธิน 8,ซอยสายลม8</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(112)">ซอยลาดพร้าว 34</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(113)">ป้ายรถประจำทาง BTS อารีย์(ทางออก4)</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(114)">ป้ายรถประจำทาง MRT ลาดพร้าว (ซอย 26)</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(115)">ซอยราชครู,ตรงข้ามซอยพหลโยธิน 5</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(116)">ปากทางลาดพร้าว-วิภาวดีรังสิต</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(117)">ซอยพหลโยธิน 2,ซอยกาญจนาคม</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(118)">ป้ายรถประจำทาง BTS สถานีหมอชิต(ทางออก4)</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(119)">ป้ายรถประจำทาง BTSสนามเป้า(ทางออก4)</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(120)">ป้ายรถประจำทาง MRT กำแพงเพชร</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(121)">ททบ.5</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(122)">ตรงข้ามเจเจมอลล์</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(123)">ซอยลือชา,ตรงข้ามซอยพหลโยธิน 1</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(124)">ตรงข้ามสวนสมเด็จพระนางเจ้าสิริกิติ์</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(125)">อนุสาวรีย์ชัยสมรภูมิ (เกาะพหลโยธิน)</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class ="pai">
+                <button class="paibtn" onclick="openpop(126)">อู่หมอชิต 2</button>
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p align="center"style="font-size:100px;font-family:'Mitr';">
+                      <div align="center"style="font-size:100px;font-family:'Mitr';" id="ID5"></div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr color="black" size=2 width="100%">
+              <div class="clearfix"></div>
+            </div>
+          </div>
+      </div>
+    <div class="gps">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248057.54041061064!2d100.49302463668512!3d13.724560079483297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d6032280d61f3%3A0x10100b25de24820!2z4LiB4Lij4Li44LiH4LmA4LiX4Lie4Lih4Lir4Liy4LiZ4LiE4Lij!5e0!3m2!1sth!2sth!4v1663229046675!5m2!1sth!2sth" width="75%" height="785px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="clearfix"></div>
+      </div>
+</body>
+<script src="script/script.js"></script>
+<script>
+  function openpop(x){
+    modal.style.display = "block";
+    pai(x);
+  }
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "25%";
+  }
+  function closeNav(){
+  document.getElementById("mySidenav").style.width = "0";
+  }
+  </script>
+</html>

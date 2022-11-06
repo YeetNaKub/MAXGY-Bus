@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Binary Search</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      overflow-x: hidden;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+    }
+    
+    html {
+      box-sizing: border-box;
+    }
+    
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+    
+    .column {
+      float: left;
+      width: 20%;
+      margin-bottom: 16px;
+      padding: 0 8px;
+    }
+    
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      margin: 8px;
+    }
+    
+    .container {
+      padding: 0 16px;
+      margin-top: 4px;
+    }
+    .container1 {
+      margin-top: 4px;
+    }
+    .container1::after, .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    .container::after, .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    
+    .title {
+      color: grey;
+    }
+    
+    .buttone {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 8px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+    }
+    
+    .buttone:hover {
+      background-color: #555;
+    }
+    
+    @media screen and (max-width: 650px) {
+      .column {
+        width: 100%;
+        display: block;
+      }
+    }
+    .btnd {
+      background-color: DodgerBlue;
+      border: none;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+    .btnd:hover {
+      background-color: RoyalBlue;
+    }
+    .abcont{
+      margin-left: 45%;
+      width: 10%;
+    }
+    </style>
+</head>
+<body>
+    <div class="tabab">
+      <div class="logo">
+        <div class="menu">
+          <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="index.html">MAGXY BUS</a>
+            <a href="about.html">About Us</a> 
+            <a href="https://forms.gle/6ocVfgpfwLkGq6tZA" style="font-family:'Mitr';">แบบประเมิน</a>
+          </div>
+          <span style="font-size:30px;cursor:pointer;color:white" onclick="openNav()">&#9776;</span>
+          
+        </div>
+        <h1 style="color:white;cursor:pointer">Binary Search Algorithm Group</h1>
+      </div>
+    </div>
+    <h1 style="text-align:center;font-weight:bold">Our Team</h1>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="image/1.JPG"  style="width:100%">
+      <div class="container">
+        <h4 style="font-family:'Mitr';">น.ส.อัจฉรานันท์ พิศวง</h4>
+        <p class="title">Report Writer</p>
+        <p style="font-family:'Mitr';">รหัสนิสิต : 64109010181</p>
+        <p style="font-family:'Mitr';">095-610-8239</p>
+        <p><a href="https://www.instagram.com/aedonotdohomeworkxaechikosss/"><button class="buttone">Contact</button></a></button></p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <img src="image/2.JPG"  style="width:100%">
+      <div class="container1">
+        <h4 align="center" style="font-family:'Mitr';">น.ส.กัญญพัชร เกียรติศิลปิน</h4>
+      </div>
+      <div class="container">
+        <p class="title">Data Collector</p>
+        <p style="font-family:'Mitr';">รหัสนิสิต : 64109010264</p>
+        <p>&nbsp</p>
+        <h2>&nbsp</h2>
+        <h2>&nbsp</h2>
+        <h1>&nbsp</h1>
+        <p style="font-family:'Mitr';">090-993-1352</p>
+        <p><a href="https://www.instagram.com/m_inn_d/"><button class="buttone">Contact</button></a></button></p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <img src="image/3.JPG"  style="width:100%">
+      <div class="container">
+        <h4 style="font-family:'Mitr';">นายณฤนันท์  รัตนวรรณ</h4>
+        <p class="title">Coding</p>
+        <p style="font-family:'Mitr';">รหัสนิสิต : 64109010267</p>
+        <h3>&nbsp</h3>
+        <p style="font-family:'Mitr';">097-312-1062</p>
+        <p><a href="https://www.instagram.com/yeet_nrn/"><button class="buttone">Contact</button></a></button></p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <img src="image/4.JPG"  style="width:100%">
+      <div class="container">
+        <h4 style="font-family:'Mitr';">น.ส.หมิ่นเสียน  ฮั้ง</h4>
+        <p class="title">Data Collector</p>
+        <p style="font-family:'Mitr';">รหัสนิสิต : 64109010283</p>
+        <p style="font-family:'Mitr';">091-317-5721</p>
+        <p><a href="https://www.instagram.com/minsian_h/"><button class="buttone">Contact</button></a></button></p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <img src="image/5.JPG"  style="width:100%">
+      <div class="container">
+        <h4 style="font-family:'Mitr';">น.ส.รวิพร  เผ่าทิตธรรม</h4>
+        <p class="title">Report Writer</p>
+        <p style="font-family:'Mitr';">รหัสนิสิต : 64109010403</p>
+        <p style="font-family:'Mitr';">089-477-6005</p>
+        <p><a href="https://www.instagram.com/ge_pm/"><button class="buttone">Contact</button></a></button></p>
+      </div>
+    </div>
+  </div>
+</div>
+<h1 style="font-family:'Mitr';">สามารถ Download Tutorial การใช้หน้าเว็บได้ที่นี่</h1>
+<div class="abcont">
+  <a href="LabVC07_0267.pdf" download="MAGXY Bus Tutorial" class="btnd"><i class="fa fa-download">Download</i></a>
+</div>
+</body>
+<script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "25%";
+  }
+  function closeNav(){
+  document.getElementById("mySidenav").style.width = "0";
+  }
+  </script>
+</html>
