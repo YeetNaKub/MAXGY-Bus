@@ -14,12 +14,15 @@ function sai(x){
   s=x;
   if(x==1){
     document.getElementById("ID2").innerHTML = "สาย 26";
+    document.getElementById('paif').selectedIndex = 0;
   }
   if(x==2){
     document.getElementById("ID2").innerHTML = "สาย 96";
+    document.getElementById('paif').selectedIndex = 0;
   }
   if(x==0){
     document.getElementById("ID2").innerHTML = "เลือกสายรถ";
+    document.getElementById('paif').selectedIndex = 0;
   }
 }
 
