@@ -1,3 +1,5 @@
+var w=75;
+var h=785;
 var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
 span.onclick = function() {
@@ -8,7 +10,9 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
-someElement.addEventListener('touchstart', function (e) {
+
+
+document.body.addEventListener('touchstart', function (e) {
   if(e.touches.length > 1) {
     tab.style.display = "show";
   }
