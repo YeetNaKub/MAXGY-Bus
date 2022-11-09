@@ -19,6 +19,12 @@
     cursor: pointer;
     display: table;
   }
+  @media screen and (max-width: 800px) {
+    .tab{
+      width: 50%;
+      display:none
+    }
+  }
   .gps{
     width: 100%;
     height: 100%;

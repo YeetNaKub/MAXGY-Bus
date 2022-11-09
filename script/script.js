@@ -8,7 +8,11 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
-Image 
+someElement.addEventListener('touchstart', function (e) {
+  if(e.touches.length > 1) {
+    tab.style.display = "show";
+  }
+});
 
 function sai(x){
   s=x;
