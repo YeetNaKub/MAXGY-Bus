@@ -12,12 +12,6 @@ window.onclick = function(event) {
 }
 
 
-document.body.addEventListener('touchstart', function (e) {
-  if(e.touches.length > 1) {
-    tab.style.display = "show";
-  }
-});
-
 function sai(x){
   s=x;
   if(x==1){

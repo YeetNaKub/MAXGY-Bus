@@ -21,7 +21,7 @@
   }
   @media screen and (max-width: 800px) {
     .tab{
-      width: 50%;
+      width: 100%;
       display:none
     }
   }
